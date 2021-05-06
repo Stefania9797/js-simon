@@ -19,7 +19,7 @@ console.log(generatedNumbersArray);
 var timer=document.getElementById("timer")
 var seconds = 0;
 var clock=setInterval(function() {
-    if(seconds===3){
+    if(seconds===31){
         clearInterval(clock)
         for(var j=0;j<5;j++){
             //Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
@@ -30,7 +30,7 @@ var clock=setInterval(function() {
             }
         }
         alert("Hai ricordato "+userGuessList.length+" numeri "+userGuessList)
-        }
+    }
         //Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.*/
         timer.innerHTML = seconds++;
     }, 1000);
