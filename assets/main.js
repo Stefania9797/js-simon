@@ -11,7 +11,7 @@ var generatedNumbersArray=[];
 var userGuessList=[];
 //Un alert() espone 5 numeri generati casualmente.
 for(var i=0;i<5;i++){
-    generatedNumbersArray.push(randomNumber(1,900))
+    generatedNumbersArray.push(randomNumber(1,100))
 }
 alert("Ricorda questi numeri: " +generatedNumbersArray)
 console.log(generatedNumbersArray);
@@ -23,16 +23,14 @@ var clock=setInterval(function() {
         clearInterval(clock)
         for(var j=0;j<5;j++){
             //Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
-            var guess=prompt("Inserisci, uno alla volta, i numeri che ricordi")
-            userGuessList.push(guess)
+            var guess=Number(prompt("Inserisci, uno alla volta, i numeri che ricordi"));
+            console.log(guess);
+            if(generatedNumbersArray.includes(guess)){
+                userGuessList.push(guess)
             }
-            console.log(userGuessList);
+        }
+        alert("Hai ricordato "+userGuessList.length+" numeri "+userGuessList)
         }
         //Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.*/
-        /*for(var m=0;m<generatedNumbersArray.length;m++){
-            if(userGuessList.includes(generatedNumbersArray[m])){
-                alert("ciao")
-            }
-        }*/
-    timer.innerHTML = seconds++;
-}, 1000);
+        timer.innerHTML = seconds++;
+    }, 1000);
