@@ -14,8 +14,12 @@ for(var i=0;i<5;i++){
 var timer=document.getElementById("timer")
 var seconds = 0;
 var clock=setInterval(function() {
-    if(seconds===30){
+    if(seconds===6){
         clearInterval(clock)
+        for(var j=0;j<5;j++){
+            //Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
+            var userGuess=prompt("inserisci i numeri")
+        }
     }
 timer.innerHTML = seconds++;
 }, 1000);
